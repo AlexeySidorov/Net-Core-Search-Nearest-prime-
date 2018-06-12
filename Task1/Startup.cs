@@ -14,7 +14,10 @@ namespace Task1
 
         public void Configure(IApplicationBuilder app)
         {
-            app.UseMvc();
+            app.UseMvc(routes =>
+            {
+                routes.MapRoute("default", "{controller=Values}/{action=Index}/{id?}");
+            });
         }
     }
 }
